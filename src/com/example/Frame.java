@@ -32,5 +32,7 @@ public class Frame extends JFrame {
 		 Screen screen = new Screen(this);
 		 this.add(screen);
 	}
+	
+//	public Frame(int i)
 
 }

@@ -41,7 +41,7 @@ public class EnemyRoute {
 //			System.out.println(lastPos);
 			if (i!=lastPos) {
 				if(yPos>0 && i == UP) {
-					if (level.map[xPos][yPos-1] == 1) {
+					if (level.map[xPos][yPos-1] == 1 || level.map[xPos][yPos-1] == 4 || level.map[xPos][yPos-1] == 5 || level.map[xPos][yPos-1] == 6) {
 						lastPos = DOWN;
 						route[xPos][yPos] = UP;
 						yPos--;
@@ -57,7 +57,7 @@ public class EnemyRoute {
 				}
 				
 				if(xPos<17 && i == RIGHT) {
-					if (level.map[xPos+1][yPos] == 1) {
+					if (level.map[xPos+1][yPos] == 1 || level.map[xPos+1][yPos] == 4 || level.map[xPos+1][yPos] == 5 || level.map[xPos+1][yPos] == 6) {
 						lastPos = LEFT;
 						route[xPos][yPos] = RIGHT;
 						xPos++;
@@ -72,7 +72,7 @@ public class EnemyRoute {
 					}
 				}
 				if(yPos<9 && i == DOWN) {
-					if (level.map[xPos][yPos+1] == 1) {
+					if (level.map[xPos][yPos+1] == 1 || level.map[xPos][yPos+1] == 4 || level.map[xPos][yPos+1] == 5 || level.map[xPos][yPos+1] == 6) {
 						lastPos = UP;
 						route[xPos][yPos] = DOWN;
 						yPos++;
@@ -87,7 +87,7 @@ public class EnemyRoute {
 					}
 				}
 				if(xPos>0 && i == LEFT) {
-					if (level.map[xPos-1][yPos] == 1) {
+					if (level.map[xPos-1][yPos] == 1 || level.map[xPos-1][yPos] == 4 || level.map[xPos-1][yPos] == 5 || level.map[xPos-1][yPos] == 6) {
 						lastPos = RIGHT;
 						route[xPos][yPos] = LEFT;
 						xPos--;

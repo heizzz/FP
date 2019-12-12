@@ -1,7 +1,7 @@
 package com.example;
 
 public class EnemyAIMove extends EnemyAI {
-
+//	private int pos=0;
 	public EnemyAIMove(int id) {
 		super(id);
 	}
@@ -19,15 +19,19 @@ public class EnemyAIMove extends EnemyAI {
 			else {
 				if (route.route[enemy.routePosX][enemy.routePosY] == route.UP) {
 					enemy.routePosY--;
+//					pos++;
 				}
 				else if (route.route[enemy.routePosX][enemy.routePosY] == route.DOWN) {
 					enemy.routePosY++;
+//					pos++;
 				}
 				else if (route.route[enemy.routePosX][enemy.routePosY] == route.RIGHT) {
 					enemy.routePosX++;
+//					pos++;
 				}
 				else if (route.route[enemy.routePosX][enemy.routePosY] == route.LEFT) {
 					enemy.routePosX--;
+//					pos++;
 				}
 			}
 		}
@@ -35,23 +39,23 @@ public class EnemyAIMove extends EnemyAI {
 			double xPos = (enemy.xPos-200)/Screen.towerSide;
 			double yPos = (enemy.yPos-50)/Screen.towerSide;
 			
-			int lol=0;
+//			int lol=0;
 			
 			if (xPos > enemy.routePosX) {
 				enemy.xPos -= enemy.enemy.speed/24;
-				lol++;
+//				lol++;
 			}
 			if (xPos < enemy.routePosX) {
 				enemy.xPos += enemy.enemy.speed/24;
-				lol++;
+//				lol++;
 			}
 			if (yPos > enemy.routePosY) {
 				enemy.yPos -= enemy.enemy.speed/24;
-				lol++;
+//				lol++;
 			}
 			if (yPos < enemy.routePosY) {
 				enemy.yPos += enemy.enemy.speed/24;
-				lol++;
+//				lol++;
 			}
 //			if (lol==2) {
 //				System.out.println(xPos+" " + yPos);

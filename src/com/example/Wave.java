@@ -3,14 +3,16 @@ package com.example;
 public class Wave {
 	
 	Screen screen;
-	static int waveNumber= 0;
-	int enemiesThisRound=0;
-	int enemiesPerRound = 10;
+	static int waveNumber = 0;
+	int enemiesThisRound = 0;
+	int enemiesPerRound = 2;
+	static int waveThisLevel;
 	
 	boolean waveSpawning; 
 	
-	public Wave(Screen screen) {
+	public Wave(Screen screen,int waveThisLevel) {
 		this.screen = screen;
+		this.waveThisLevel = waveThisLevel;
 	}
 	
 	public void nextWave() {
@@ -31,7 +33,8 @@ public class Wave {
 	private int spawnRate = 500;
 	
 	public void spawnEnemies() {
-		if (this.enemiesThisRound < this.waveNumber*this.enemiesPerRound) {
+//		if (this.enemiesThisRound < this.waveNumber*this.enemiesPerRound) {
+		if (this.enemiesThisRound < this.enemiesPerRound) {
 			if (currentDelay < spawnRate) {
 				currentDelay++;
 			} else {
@@ -39,9 +42,16 @@ public class Wave {
 				System.out.println("[Wave] Enemy Spawned");
 				
 				this.enemiesThisRound++;
-				this.screen.spawnEnemy(waveNumber-1);
+				this.screen.spawnEnemy((waveNumber-1)%6);
 			}
 		} else {
+			if (waveThisLevel == this.waveNumber) {
+				User.complete[(waveThisLevel/10)-1] = 1;
+				waveNumber = 0;
+				Screen.win = true;
+			}
+			this.enemiesPerRound+=enemiesPerRound;
+			if (waveNumber % 6 == 0 && waveNumber != 0) Enemy.level++;
 			this.waveSpawning = false;
 		}
 	}

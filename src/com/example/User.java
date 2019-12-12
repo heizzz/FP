@@ -7,7 +7,8 @@ public class User {
 	Player player;
 	int startingMoney = 300;
 	int startingHealth = 100;
-
+	static int complete[] = {0,0,0};
+	
 	public User(Screen screen) {
 		// TODO Auto-generated constructor stub
 		this.screen = screen;
