@@ -7,6 +7,7 @@ public class Wave {
 	int enemiesThisRound = 0;
 	int enemiesPerRound = 2;
 	static int waveThisLevel;
+	int enemiesPerWave = 2;
 	
 	boolean waveSpawning; 
 	
@@ -50,7 +51,7 @@ public class Wave {
 				waveNumber = 0;
 				Screen.win = true;
 			}
-			this.enemiesPerRound+=enemiesPerRound;
+			this.enemiesPerRound+=enemiesPerWave;
 			if (waveNumber % 6 == 0 && waveNumber != 0) Enemy.level++;
 			this.waveSpawning = false;
 		}

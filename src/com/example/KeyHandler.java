@@ -21,9 +21,6 @@ public class KeyHandler implements KeyListener {
 		if (keyCode == 27) {
 			this.keyTyped.keyESC();
 		}
-		if (keyCode == 32) {
-			this.keyTyped.keySPACE();
-		}
 		if (keyCode == 10) {
 			this.keyTyped.keyENTER();
 		}
